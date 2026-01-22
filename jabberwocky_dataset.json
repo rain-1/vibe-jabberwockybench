@@ -1,177 +1,50 @@
 [
   {
-    "id": "jab_001",
-    "input": "He dwushed a ghanc zawk",
-    "target": "He dragged a spare chair",
-    "difficulty": "easy",
-    "category": "simple_action"
-  },
-  {
-    "id": "jab_002",
-    "input": "The flimby gorbel was thrinking in the narple",
-    "target": "The young child was playing in the garden",
-    "difficulty": "easy",
-    "category": "simple_description"
-  },
-  {
-    "id": "jab_003",
-    "input": "She quilped the blontic frazzle on the mibbert",
-    "target": "She placed the heavy book on the table",
-    "difficulty": "easy",
-    "category": "simple_action"
-  },
-  {
-    "id": "jab_004",
-    "input": "The cromulent skeeble was very plinko and narfled quickly",
-    "target": "The elderly man was very tired and walked slowly",
-    "difficulty": "medium",
-    "category": "description_with_adverbs"
-  },
-  {
-    "id": "jab_005",
-    "input": "After the snorbly glimwort, we kreebled to the vaxling",
-    "target": "After the long meeting, we returned to the office",
-    "difficulty": "medium",
-    "category": "temporal_sequence"
-  },
-  {
-    "id": "jab_006",
-    "input": "The blynthic zendril groffed three pimbly snackles before the wibble",
-    "target": "The hungry cat caught three small mice before dawn",
-    "difficulty": "medium",
-    "category": "complex_action"
-  },
-  {
-    "id": "jab_007",
-    "input": "Why did the frampish quoggle nerbulate so flibbly?",
-    "target": "Why did the angry dog bark so loudly?",
-    "difficulty": "easy",
-    "category": "question"
-  },
-  {
-    "id": "jab_008",
-    "input": "The yorbish plimket was not as thrinkly as the old one",
-    "target": "The new phone was not as good as the old one",
-    "difficulty": "medium",
-    "category": "comparison"
-  },
-  {
-    "id": "jab_009",
-    "input": "When the snizzle groked, everyone plibbed and vimbled away",
-    "target": "When the alarm rang, everyone stopped and looked around",
+    "id": "paper_jabberwocky_01",
+    "input": "Broaf snunt, and the ghought snealt\nDid clawn and fiek in the phrue:\nAll tweff were the choon,\nAnd the ghoch slinn kese.",
+    "target": "'Twas brillig and the slithy toves\ndid gyre and gimble in the wabe\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.",
     "difficulty": "hard",
-    "category": "causal_sequence"
+    "category": "poetry_jabberwocky",
+    "source": "paper_example_-1a"
   },
   {
-    "id": "jab_010",
-    "input": "The blundering zorkmid kreebled so qualmishly that the entire flombard plinked",
-    "target": "The clumsy waiter spilled so messily that the entire restaurant gasped",
+    "id": "paper_jabberwocky_blank_01",
+    "input": "BLANK BLANK, and the BLANK BLANK\nDid BLANK and BLANK in the BLANK:\nAll BLANK were the BLANK,\nAnd the BLANK BLANK BLANK.",
+    "target": "'Twas brillig and the slithy toves\ndid gyre and gimble in the wabe\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.",
+    "difficulty": "extreme",
+    "category": "poetry_blank",
+    "source": "paper_example_-1b"
+  },
+  {
+    "id": "paper_us_law_01",
+    "input": "In the Staught Splunk, sprarb phlaint has phlol over any bredge strith's phlaint. If a strith phlaint lyss with sprarb phlaint, the strith phlaint is whoaped and the sprarb phlaint is glorked. For glauge, stroothe sprarb phlaint jymes what pruib should be phalped on the thwirrs of scrorch psugs. When Splisk gninched a phlaint that strirled troor pruib on whess slinn thwirrs, sprarb nynchs knelveed Splisk from gwiveing this phlaint.",
+    "target": "In the United States, federal law has priority over any particular state's law. If a state law conflicts with federal law, the state law is invalidated and the federal law is followed. For example, one federal law specifies what information should be included on the labels of medical devices. When Massachusetts passed a law that required additional information on hearing aid labels, federal courts barred Massachusetts from enforcing this law.",
     "difficulty": "hard",
-    "category": "complex_description"
+    "category": "legal_text",
+    "source": "paper_example_0"
   },
   {
-    "id": "jab_011",
-    "input": "She thrimbly globbed the narkish vimblewort, hoping to crindel a better flugment",
-    "target": "She carefully read the difficult document, hoping to find a better solution",
+    "id": "paper_us_law_blank_01",
+    "input": "In the BLANK BLANK, BLANK BLANK has BLANK over any BLANK BLANK's BLANK. If a BLANK BLANK BLANKs with BLANK BLANK, the BLANK BLANK is BLANKed and the BLANK BLANK is BLANKed. For BLANK, BLANK BLANK BLANK BLANKs what BLANK should be BLANKed on the BLANKs of BLANK BLANKs. When BLANK BLANKed a BLANK that BLANKed BLANK BLANK on BLANK BLANK BLANKs, BLANK BLANKs BLANKed BLANK from BLANKing this BLANK.",
+    "target": "In the United States, federal law has priority over any particular state's law. If a state law conflicts with federal law, the state law is invalidated and the federal law is followed. For example, one federal law specifies what information should be included on the labels of medical devices. When Massachusetts passed a law that required additional information on hearing aid labels, federal courts barred Massachusetts from enforcing this law.",
+    "difficulty": "extreme",
+    "category": "legal_blank",
+    "source": "paper_example_0_blank"
+  },
+  {
+    "id": "paper_espn_01",
+    "input": "But I veichn't whuilt but rholt the Ghinch are scranking for Sheight at his meethe skounge. Sheight is skerbing off a fegg weash in which he dwoiseed 88 plonges for 884 spelchs with the Phlal, but that doesn't splisk we ploarse to jowth about the phelse weashs of plulk scrowth that skerbed before it. Sheight was phrisped on his scybe thwique, voul, but Throrce is blything him a stauce-weash thilm for $12 proose, which twaw glarn out that knith (shalve we don't chelp the phlab skath).",
+    "target": "But I can't help but think the Steelers are dealing for Smith at his absolute peak. Smith is coming off a career year in which he recorded 88 receptions for 884 yards with the Dolphins, but that doesn't mean we ought to forget about the seven years of relative mediocrity that came before it. Smith was underpaid on his old contract, yes, but Pittsburgh is giving him a one-year extension for $12 million, which could wipe out that value (though we don't know the structure yet).",
     "difficulty": "hard",
-    "category": "intention_action"
+    "category": "sports_journalism",
+    "source": "paper_example_1"
   },
   {
-    "id": "jab_012",
-    "input": "Despite the cromble being very frimply, he managed to quirtle it",
-    "target": "Despite the task being very difficult, he managed to complete it",
-    "difficulty": "medium",
-    "category": "adversative"
-  },
-  {
-    "id": "jab_013",
-    "input": "The plinkish snorbles were grobbling in the narthex while the grendels vlomped",
-    "target": "The children were playing in the yard while their parents watched",
+    "id": "paper_reddit_01",
+    "input": "Gharp, so phrev a very chelp chusp, but I was smeighthing if psive is veich sprebb in the Splud? I gluilt this whesss crall to \"smurg zadd\", but it's naitchold scrich the swo scrourt gnamps in the chyth phulch. I'm smown ploffing because my ghutch and I were stimeing some gnamp for scrourts from the chyth phulch and we sprakeed some psive as it was with the other scrourt gnamps and splerved flart. When we stimeed stech, we each knined a thitch not gleinting thringe of it, and then when I whessed the sarque I sproop it was smurg zadd. Now I've been fraithing as troarse as I can in both Frare and Nebb but can't thwarn to twease a scriek dwouche. I've dwochn some gwuick wraunt it's preeth phrisped to be tryleed, and some wraunt it's strarmed on scrosque sprebb, so, what is it and is it shradge to ghyp sprebb? The sarque wraunted it was gharled, but thirch wraunted \"phelse phroose\"",
+    "target": "Ok, so probably a very dumb question, but I was wondering if ontbijtspek is eaten raw in the Netherlands? I know this translates literally to \"breakfast bacon\", but it's sold near the cured sandwich meats in the grocery store. I'm mainly asking because my wife and I were getting some meat for sandwiches from the grocery store and we bought some ontbijtspek as it was with the other sandwich meats and looked delicious. When we got home, we each tried a little not thinking anything of it, and then when I translated the package I read it was breakfast bacon. Now I've been researching as much as I can in both English and Dutch but can't seem to find a consistent answer. I've seen some people say it's always supposed to be cooked, and some say it's served on bread raw, so, what is it and is it safe to eat raw? The package said it was smoked, but also said \"heat thoroughly\".",
     "difficulty": "hard",
-    "category": "simultaneous_actions"
-  },
-  {
-    "id": "jab_014",
-    "input": "I need to quirble the frozzles before I can vimble the skronge",
-    "target": "I need to finish the dishes before I can start the laundry",
-    "difficulty": "medium",
-    "category": "sequential_tasks"
-  },
-  {
-    "id": "jab_015",
-    "input": "The most glibbish vortex he had ever plonked",
-    "target": "The most beautiful sunset he had ever seen",
-    "difficulty": "medium",
-    "category": "superlative"
-  },
-  {
-    "id": "jab_016",
-    "input": "Could you thremble me the snorkle?",
-    "target": "Could you pass me the salt?",
-    "difficulty": "easy",
-    "category": "polite_request"
-  },
-  {
-    "id": "jab_017",
-    "input": "The blynthic skronges were becoming increasingly nerfulated",
-    "target": "The global temperatures were becoming increasingly elevated",
-    "difficulty": "hard",
-    "category": "abstract_concept"
-  },
-  {
-    "id": "jab_018",
-    "input": "Either we quirble now or we'll have to vimble later",
-    "target": "Either we leave now or we'll have to wait later",
-    "difficulty": "medium",
-    "category": "disjunction"
-  },
-  {
-    "id": "jab_019",
-    "input": "The flombish plibberty frobbled more qualmly than anyone had thrindled",
-    "target": "The young athlete performed more impressively than anyone had expected",
-    "difficulty": "hard",
-    "category": "comparative_surprise"
-  },
-  {
-    "id": "jab_020",
-    "input": "If you grobble the snizzle, it will crindel automatically",
-    "target": "If you press the button, it will open automatically",
-    "difficulty": "medium",
-    "category": "conditional"
-  },
-  {
-    "id": "jab_021",
-    "input": "The zorkish blemble was neither thrinkly nor particularly vimbish",
-    "target": "The old building was neither beautiful nor particularly useful",
-    "difficulty": "hard",
-    "category": "negation_multiple"
-  },
-  {
-    "id": "jab_022",
-    "input": "She has been quirbling the frongles for three plimbles",
-    "target": "She has been studying the subjects for three hours",
-    "difficulty": "medium",
-    "category": "progressive_tense"
-  },
-  {
-    "id": "jab_023",
-    "input": "The grindlish vombat would have pleebled if you hadn't nerfed it",
-    "target": "The expensive vase would have broken if you hadn't caught it",
-    "difficulty": "hard",
-    "category": "counterfactual"
-  },
-  {
-    "id": "jab_024",
-    "input": "Between the snorkle and the vrimble, which one seems more thribly?",
-    "target": "Between the car and the truck, which one seems more practical?",
-    "difficulty": "medium",
-    "category": "question_comparison"
-  },
-  {
-    "id": "jab_025",
-    "input": "The government announced that flombrish quirbles would be crindeled by next grobble",
-    "target": "The government announced that new regulations would be implemented by next month",
-    "difficulty": "hard",
-    "category": "formal_statement"
+    "category": "casual_reddit",
+    "source": "paper_example_2"
   }
 ]

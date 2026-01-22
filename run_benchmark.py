@@ -75,7 +75,7 @@ def parse_args():
     parser.add_argument(
         "--difficulty",
         type=str,
-        choices=["easy", "medium", "hard", "all"],
+        choices=["easy", "medium", "hard", "extreme", "all"],
         default="all",
         help="Run only specific difficulty level (default: all)"
     )
@@ -99,6 +99,13 @@ def parse_args():
         type=int,
         default=None,
         help="Limit number of samples to run (for testing)"
+    )
+
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=300,
+        help="Timeout in seconds for each model evaluation (default: 300)"
     )
 
     return parser.parse_args()
@@ -130,7 +137,7 @@ def get_task_name(difficulty: str) -> str:
         return f"jabberwocky_{difficulty}"
 
 
-async def run_evaluation(model: str, task_name: str, args) -> dict:
+def run_evaluation(model: str, task_name: str, args) -> dict:
     """Run evaluation for a single model."""
     print(f"\n{'='*60}")
     print(f"Running {task_name} on {model}")
@@ -142,13 +149,14 @@ async def run_evaluation(model: str, task_name: str, args) -> dict:
             "tasks": f"jabberwocky_benchmark.py@{task_name}",
             "model": model,
             "log_dir": args.output_dir,
+            "time_limit": args.timeout,
         }
 
         if args.max_samples:
             eval_params["limit"] = args.max_samples
 
         # Run evaluation
-        logs = await eval(**eval_params)
+        logs = eval(**eval_params)
 
         # Extract results
         log = logs[0]
@@ -157,19 +165,30 @@ async def run_evaluation(model: str, task_name: str, args) -> dict:
             "task": task_name,
             "timestamp": datetime.now().isoformat(),
             "status": log.status,
-            "scores": log.results.scores if log.results else None,
-            "metrics": log.results.metrics if log.results else None,
         }
 
         # Print summary
         print(f"\n{'='*60}")
         print(f"Results for {model}")
         print(f"{'='*60}")
+        
+        accuracy_score = "N/A"
         if log.results and log.results.scores:
-            for score_name, score_value in log.results.scores.items():
-                print(f"{score_name}: {score_value.value:.2%}")
+            for score in log.results.scores:
+                # In inspect-ai 0.3+, scores is a list of EvalScore
+                # Metrics are inside score.metrics
+                if 'accuracy' in score.metrics:
+                    val = score.metrics['accuracy'].value
+                    accuracy_score = f"{val:.2%}"
+                    print(f"Accuracy: {accuracy_score}")
+                
+                for metric_name, metric_val in score.metrics.items():
+                    if metric_name != 'accuracy':
+                        print(f"{metric_name}: {metric_val.value:.4f}")
         print()
 
+        # Update results dict for the summary file
+        results["accuracy"] = accuracy_score
         return results
 
     except Exception as e:
@@ -183,7 +202,7 @@ async def run_evaluation(model: str, task_name: str, args) -> dict:
         }
 
 
-async def main():
+def main():
     """Main execution function."""
     args = parse_args()
 
@@ -212,7 +231,7 @@ async def main():
     # Run evaluations
     all_results = []
     for model in models:
-        result = await run_evaluation(model, task_name, args)
+        result = run_evaluation(model, task_name, args)
         all_results.append(result)
 
     # Save aggregated results
@@ -239,13 +258,10 @@ async def main():
     print("-" * 60)
     for result in all_results:
         model_name = result['model'].split('/')[-1][:38]
-        if result.get('scores') and 'accuracy' in result['scores']:
-            accuracy = f"{result['scores']['accuracy']['value']:.2%}"
-        else:
-            accuracy = "N/A"
+        accuracy = result.get('accuracy', 'N/A')
         status = result.get('status', 'unknown')
         print(f"{model_name:<40} {accuracy:<10} {status:<10}")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

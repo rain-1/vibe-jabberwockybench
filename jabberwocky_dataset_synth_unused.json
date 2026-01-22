@@ -1,0 +1,177 @@
+[
+    {
+        "id": "jab_001",
+        "input": "He dwushed a ghanc zawk",
+        "target": "He dragged a spare chair",
+        "difficulty": "easy",
+        "category": "simple_action"
+    },
+    {
+        "id": "jab_002",
+        "input": "The flimby gorbel was thrinking in the narple",
+        "target": "The young child was playing in the garden",
+        "difficulty": "easy",
+        "category": "simple_description"
+    },
+    {
+        "id": "jab_003",
+        "input": "She quilped the blontic frazzle on the mibbert",
+        "target": "She placed the heavy book on the table",
+        "difficulty": "easy",
+        "category": "simple_action"
+    },
+    {
+        "id": "jab_004",
+        "input": "The cromulent skeeble was very plinko and narfled quickly",
+        "target": "The elderly man was very tired and walked slowly",
+        "difficulty": "medium",
+        "category": "description_with_adverbs"
+    },
+    {
+        "id": "jab_005",
+        "input": "After the snorbly glimwort, we kreebled to the vaxling",
+        "target": "After the long meeting, we returned to the office",
+        "difficulty": "medium",
+        "category": "temporal_sequence"
+    },
+    {
+        "id": "jab_006",
+        "input": "The blynthic zendril groffed three pimbly snackles before the wibble",
+        "target": "The hungry cat caught three small mice before dawn",
+        "difficulty": "medium",
+        "category": "complex_action"
+    },
+    {
+        "id": "jab_007",
+        "input": "Why did the frampish quoggle nerbulate so flibbly?",
+        "target": "Why did the angry dog bark so loudly?",
+        "difficulty": "easy",
+        "category": "question"
+    },
+    {
+        "id": "jab_008",
+        "input": "The yorbish plimket was not as thrinkly as the old one",
+        "target": "The new phone was not as good as the old one",
+        "difficulty": "medium",
+        "category": "comparison"
+    },
+    {
+        "id": "jab_009",
+        "input": "When the snizzle groked, everyone plibbed and vimbled away",
+        "target": "When the alarm rang, everyone stopped and looked around",
+        "difficulty": "hard",
+        "category": "causal_sequence"
+    },
+    {
+        "id": "jab_010",
+        "input": "The blundering zorkmid kreebled so qualmishly that the entire flombard plinked",
+        "target": "The clumsy waiter spilled so messily that the entire restaurant gasped",
+        "difficulty": "hard",
+        "category": "complex_description"
+    },
+    {
+        "id": "jab_011",
+        "input": "She thrimbly globbed the narkish vimblewort, hoping to crindel a better flugment",
+        "target": "She carefully read the difficult document, hoping to find a better solution",
+        "difficulty": "hard",
+        "category": "intention_action"
+    },
+    {
+        "id": "jab_012",
+        "input": "Despite the cromble being very frimply, he managed to quirtle it",
+        "target": "Despite the task being very difficult, he managed to complete it",
+        "difficulty": "medium",
+        "category": "adversative"
+    },
+    {
+        "id": "jab_013",
+        "input": "The plinkish snorbles were grobbling in the narthex while the grendels vlomped",
+        "target": "The children were playing in the yard while their parents watched",
+        "difficulty": "hard",
+        "category": "simultaneous_actions"
+    },
+    {
+        "id": "jab_014",
+        "input": "I need to quirble the frozzles before I can vimble the skronge",
+        "target": "I need to finish the dishes before I can start the laundry",
+        "difficulty": "medium",
+        "category": "sequential_tasks"
+    },
+    {
+        "id": "jab_015",
+        "input": "The most glibbish vortex he had ever plonked",
+        "target": "The most beautiful sunset he had ever seen",
+        "difficulty": "medium",
+        "category": "superlative"
+    },
+    {
+        "id": "jab_016",
+        "input": "Could you thremble me the snorkle?",
+        "target": "Could you pass me the salt?",
+        "difficulty": "easy",
+        "category": "polite_request"
+    },
+    {
+        "id": "jab_017",
+        "input": "The blynthic skronges were becoming increasingly nerfulated",
+        "target": "The global temperatures were becoming increasingly elevated",
+        "difficulty": "hard",
+        "category": "abstract_concept"
+    },
+    {
+        "id": "jab_018",
+        "input": "Either we quirble now or we'll have to vimble later",
+        "target": "Either we leave now or we'll have to wait later",
+        "difficulty": "medium",
+        "category": "disjunction"
+    },
+    {
+        "id": "jab_019",
+        "input": "The flombish plibberty frobbled more qualmly than anyone had thrindled",
+        "target": "The young athlete performed more impressively than anyone had expected",
+        "difficulty": "hard",
+        "category": "comparative_surprise"
+    },
+    {
+        "id": "jab_020",
+        "input": "If you grobble the snizzle, it will crindel automatically",
+        "target": "If you press the button, it will open automatically",
+        "difficulty": "medium",
+        "category": "conditional"
+    },
+    {
+        "id": "jab_021",
+        "input": "The zorkish blemble was neither thrinkly nor particularly vimbish",
+        "target": "The old building was neither beautiful nor particularly useful",
+        "difficulty": "hard",
+        "category": "negation_multiple"
+    },
+    {
+        "id": "jab_022",
+        "input": "She has been quirbling the frongles for three plimbles",
+        "target": "She has been studying the subjects for three hours",
+        "difficulty": "medium",
+        "category": "progressive_tense"
+    },
+    {
+        "id": "jab_023",
+        "input": "The grindlish vombat would have pleebled if you hadn't nerfed it",
+        "target": "The expensive vase would have broken if you hadn't caught it",
+        "difficulty": "hard",
+        "category": "counterfactual"
+    },
+    {
+        "id": "jab_024",
+        "input": "Between the snorkle and the vrimble, which one seems more thribly?",
+        "target": "Between the car and the truck, which one seems more practical?",
+        "difficulty": "medium",
+        "category": "question_comparison"
+    },
+    {
+        "id": "jab_025",
+        "input": "The government announced that flombrish quirbles would be crindeled by next grobble",
+        "target": "The government announced that new regulations would be implemented by next month",
+        "difficulty": "hard",
+        "category": "formal_statement"
+    }
+]

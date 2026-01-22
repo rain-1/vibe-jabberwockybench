@@ -62,68 +62,117 @@ def jabberwocky_prompt() -> solver:
     return solve
 
 
+def word_levenshtein_distance(s1: list[str], s2: list[str]) -> int:
+    """
+    Compute Levenshtein distance at the word level.
+    Returns the minimum number of word insertions, deletions, 
+    and substitutions needed to transform s1 into s2.
+    """
+    m, n = len(s1), len(s2)
+    
+    # Create distance matrix
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    
+    # Initialize base cases
+    for i in range(m + 1):
+        dp[i][0] = i
+    for j in range(n + 1):
+        dp[0][j] = j
+    
+    # Fill the matrix
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if s1[i - 1] == s2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1]
+            else:
+                dp[i][j] = 1 + min(
+                    dp[i - 1][j],      # deletion
+                    dp[i][j - 1],      # insertion
+                    dp[i - 1][j - 1]   # substitution
+                )
+    
+    return dp[m][n]
+
+
+def word_level_similarity(model_text: str, target_text: str) -> float:
+    """
+    Compute similarity between two texts using word-level Levenshtein distance.
+    Returns a score between 0.0 (completely different) and 1.0 (identical).
+    """
+    # Tokenize into words, normalizing case and removing punctuation
+    import re
+    
+    def tokenize(text: str) -> list[str]:
+        # Remove punctuation and split into words
+        words = re.findall(r'\b\w+\b', text.lower())
+        return words
+    
+    model_words = tokenize(model_text)
+    target_words = tokenize(target_text)
+    
+    if not model_words and not target_words:
+        return 1.0  # Both empty = perfect match
+    if not model_words or not target_words:
+        return 0.0  # One empty, one not = no match
+    
+    distance = word_levenshtein_distance(model_words, target_words)
+    max_len = max(len(model_words), len(target_words))
+    
+    # Convert distance to similarity (0 distance = 1.0 similarity)
+    similarity = 1.0 - (distance / max_len)
+    return max(0.0, similarity)  # Clamp to non-negative
+
+
 @scorer(metrics=[accuracy(), stderr()])
 def jabberwocky_scorer() -> scorer:
     """
     Custom scorer for Jabberwocky translations.
 
-    Uses fuzzy matching to evaluate semantic similarity between
-    the model's output and the target translation.
+    Uses word-level Levenshtein distance to evaluate similarity between
+    the model's output and the target translation. This gives a more
+    nuanced score than simple word overlap.
     """
 
     async def score(state: TaskState, target: Target) -> Score:
         # Get the model's answer
-        model_answer = state.output.completion.strip().lower()
+        model_answer = state.output.completion.strip()
 
         # Get the target answer(s)
-        target_text = target.text.strip().lower() if isinstance(target.text, str) else target.text[0].strip().lower()
+        target_text = target.text.strip() if isinstance(target.text, str) else target.text[0].strip()
 
-        # Exact match scoring
-        if model_answer == target_text:
+        # Compute word-level similarity
+        similarity = word_level_similarity(model_answer, target_text)
+
+        # Scoring thresholds based on edit distance similarity
+        if similarity >= 0.9:
             return Score(
-                value="C",  # Correct
+                value="C",  # Correct - very close match
                 answer=model_answer,
-                explanation="Exact match with target translation"
+                explanation=f"Excellent match (similarity: {similarity:.1%})"
             )
-
-        # Partial credit for semantic similarity
-        # Check if key content words match
-        model_words = set(model_answer.split())
-        target_words = set(target_text.split())
-
-        # Remove common stop words for better matching
-        stop_words = {'the', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'was', 'were', 'is', 'are', 'be', 'been', 'being'}
-        model_words_filtered = model_words - stop_words
-        target_words_filtered = target_words - stop_words
-
-        if len(target_words_filtered) == 0:
-            # Fallback to unfiltered comparison
-            overlap = len(model_words & target_words)
-            total = len(target_words)
-        else:
-            overlap = len(model_words_filtered & target_words_filtered)
-            total = len(target_words_filtered)
-
-        similarity = overlap / total if total > 0 else 0
-
-        # Scoring thresholds
-        if similarity >= 0.7:
+        elif similarity >= 0.7:
             return Score(
-                value="C",
+                value="C",  # Correct - good match
                 answer=model_answer,
-                explanation=f"High semantic similarity ({similarity:.2%})"
+                explanation=f"Good match (similarity: {similarity:.1%})"
             )
-        elif similarity >= 0.4:
+        elif similarity >= 0.5:
             return Score(
-                value="P",  # Partial
+                value="P",  # Partial - moderate match
                 answer=model_answer,
-                explanation=f"Moderate semantic similarity ({similarity:.2%})"
+                explanation=f"Partial match (similarity: {similarity:.1%})"
+            )
+        elif similarity >= 0.3:
+            return Score(
+                value="P",  # Partial - some overlap
+                answer=model_answer,
+                explanation=f"Weak match (similarity: {similarity:.1%})"
             )
         else:
             return Score(
                 value="I",  # Incorrect
                 answer=model_answer,
-                explanation=f"Low semantic similarity ({similarity:.2%})"
+                explanation=f"Poor match (similarity: {similarity:.1%})"
             )
 
     return score
@@ -137,7 +186,8 @@ def record_to_sample(record: dict[str, Any]) -> Sample:
         id=record.get("id"),
         metadata={
             "difficulty": record.get("difficulty", "unknown"),
-            "category": record.get("category", "unknown")
+            "category": record.get("category", "unknown"),
+            "source": record.get("source", "unknown")
         }
     )
 
@@ -159,6 +209,24 @@ def jabberwocky():
             jabberwocky_prompt(),
             generate()
         ],
+        scorer=jabberwocky_scorer(),
+    )
+
+
+@task
+def jabberwocky_extreme():
+    """Jabberwocky benchmark - Extreme difficulty only (BLANK versions)"""
+    dataset = json_dataset(
+        "jabberwocky_dataset.json",
+        sample_fields=record_to_sample
+    )
+
+    def filter_extreme(sample: Sample) -> bool:
+        return sample.metadata.get("difficulty") == "extreme"
+
+    return Task(
+        dataset=[s for s in dataset if filter_extreme(s)],
+        solver=[jabberwocky_prompt(), generate()],
         scorer=jabberwocky_scorer(),
     )
 
