@@ -1,0 +1,15 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163755",
+  "models_evaluated": 1,
+  "results": [
+    {
+      "model": "openrouter/anthropic/claude-3.5-sonnet",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:55.006696",
+      "status": "success",
+      "accuracy": "66.67%"
+    }
+  ]
+}

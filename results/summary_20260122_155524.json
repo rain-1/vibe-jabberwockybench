@@ -1,0 +1,22 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_155524",
+  "models_evaluated": 2,
+  "results": [
+    {
+      "model": "openrouter/x-ai/grok-2",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T15:55:23.722069",
+      "status": "error",
+      "error": "[bold]ERROR[/bold]: OpenRouter API requires optional dependencies. Install with:\n\n[bold]pip install openai[/bold]"
+    },
+    {
+      "model": "openrouter/x-ai/grok-2-vision",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T15:55:24.087821",
+      "status": "error",
+      "error": "[bold]ERROR[/bold]: OpenRouter API requires optional dependencies. Install with:\n\n[bold]pip install openai[/bold]"
+    }
+  ]
+}

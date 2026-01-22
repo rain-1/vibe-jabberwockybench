@@ -1,0 +1,22 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163732",
+  "models_evaluated": 2,
+  "results": [
+    {
+      "model": "openrouter/google/gemini-2.0-flash-001",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:31.058225",
+      "status": "success",
+      "accuracy": "50.00%"
+    },
+    {
+      "model": "openrouter/google/gemini-2.0-pro-exp",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:32.110540",
+      "status": "error",
+      "accuracy": "N/A"
+    }
+  ]
+}

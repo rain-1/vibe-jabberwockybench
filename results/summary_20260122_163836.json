@@ -1,0 +1,15 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163836",
+  "models_evaluated": 1,
+  "results": [
+    {
+      "model": "openrouter/x-ai/grok-2-1212",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:38:36.373041",
+      "status": "error",
+      "accuracy": "N/A"
+    }
+  ]
+}

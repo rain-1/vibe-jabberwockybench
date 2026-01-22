@@ -1,0 +1,22 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_155126",
+  "models_evaluated": 2,
+  "results": [
+    {
+      "model": "openrouter/x-ai/grok-2",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T15:51:26.281846",
+      "status": "error",
+      "error": "asyncio.run() cannot be called from a running event loop"
+    },
+    {
+      "model": "openrouter/x-ai/grok-2-vision",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T15:51:26.284929",
+      "status": "error",
+      "error": "asyncio.run() cannot be called from a running event loop"
+    }
+  ]
+}

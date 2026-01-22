@@ -1,0 +1,15 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163706",
+  "models_evaluated": 1,
+  "results": [
+    {
+      "model": "openrouter/openai/gpt-4o",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:06.985155",
+      "status": "success",
+      "accuracy": "58.33%"
+    }
+  ]
+}

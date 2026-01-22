@@ -1,0 +1,29 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_161529",
+  "models_evaluated": 3,
+  "results": [
+    {
+      "model": "openrouter/x-ai/grok-4",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:13:31.293188",
+      "status": "error",
+      "error": "'list' object has no attribute 'items'"
+    },
+    {
+      "model": "openrouter/x-ai/grok-3",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:13:32.052791",
+      "status": "error",
+      "error": "'list' object has no attribute 'items'"
+    },
+    {
+      "model": "openrouter/x-ai/grok-code-fast-1",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:15:29.174721",
+      "status": "error",
+      "error": "'list' object has no attribute 'items'"
+    }
+  ]
+}

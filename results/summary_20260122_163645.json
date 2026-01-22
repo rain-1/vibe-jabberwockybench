@@ -1,0 +1,15 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163645",
+  "models_evaluated": 1,
+  "results": [
+    {
+      "model": "openrouter/openai/gpt-4o",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:36:45.336080",
+      "status": "error",
+      "error": "[bold]ERROR[/bold]: OpenRouter API requires optional dependencies. Install with:\n\n[bold]pip install openai[/bold]"
+    }
+  ]
+}

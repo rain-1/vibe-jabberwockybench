@@ -1,0 +1,22 @@
+{
+  "benchmark": "jabberwocky",
+  "task": "jabberwocky",
+  "timestamp": "20260122_163720",
+  "models_evaluated": 2,
+  "results": [
+    {
+      "model": "openrouter/anthropic/claude-4-opus",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:19.064025",
+      "status": "error",
+      "accuracy": "N/A"
+    },
+    {
+      "model": "openrouter/anthropic/claude-4-sonnet",
+      "task": "jabberwocky",
+      "timestamp": "2026-01-22T16:37:20.123165",
+      "status": "error",
+      "accuracy": "N/A"
+    }
+  ]
+}
