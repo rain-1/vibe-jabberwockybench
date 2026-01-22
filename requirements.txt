@@ -1,0 +1,8 @@
+# Inspect AI framework
+inspect-ai>=0.3.40
+
+# Optional: For enhanced text analysis
+rapidfuzz>=3.0.0
+
+# For async operations
+aiohttp>=3.9.0
